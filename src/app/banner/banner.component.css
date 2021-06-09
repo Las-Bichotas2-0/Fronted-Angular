@@ -1,0 +1,20 @@
+mat-grid-tile {
+  background: lightblue;
+}
+.fix-img{
+  max-width: 100%;
+  height: auto;
+}
+.font-title{
+  font-size: 96px;
+}
+.font-subtitle{
+  font-size: 20px;
+}
+
+.font-subtitle-sub{
+  font-size: 15px;
+}
+.mb-4{
+  margin-bottom: 4rem;
+}
