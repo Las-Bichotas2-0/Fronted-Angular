@@ -14,11 +14,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { CarouselComponent } from './banner/carousel/carousel.component';
+import { CallToResgiterComponent } from './banner/call-to-resgiter/call-to-resgiter.component';
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    CarouselComponent
+    CarouselComponent,
+    CallToResgiterComponent
   ],
   imports: [
     BrowserModule,

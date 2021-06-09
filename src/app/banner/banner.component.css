@@ -1,6 +1,3 @@
-mat-grid-tile {
-  background: lightblue;
-}
 .fix-img{
   max-width: 100%;
   height: auto;
@@ -17,4 +14,7 @@ mat-grid-tile {
 }
 .mb-4{
   margin-bottom: 4rem;
+}
+.p-cent{
+  padding-right: 2rem;
 }
