@@ -13,14 +13,13 @@ import { BannerComponent } from './banner/banner.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { CarouselComponent } from './banner/carousel/carousel.component';
-import { CallToResgiterComponent } from './banner/call-to-resgiter/call-to-resgiter.component';
+import { CallToRegisterComponent } from './call-to-register/call-to-register.component';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    CarouselComponent,
-    CallToResgiterComponent
+    CallToRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +27,8 @@ import { CallToResgiterComponent } from './banner/call-to-resgiter/call-to-resgi
     BrowserAnimationsModule,
     MatGridListModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

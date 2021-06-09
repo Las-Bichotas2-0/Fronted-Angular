@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CallToResgiterComponent } from './call-to-resgiter.component';
+import { CallToRegisterComponent } from './call-to-register.component';
 
-describe('CallToResgiterComponent', () => {
-  let component: CallToResgiterComponent;
-  let fixture: ComponentFixture<CallToResgiterComponent>;
+describe('CallToRegisterComponent', () => {
+  let component: CallToRegisterComponent;
+  let fixture: ComponentFixture<CallToRegisterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CallToResgiterComponent ]
+      declarations: [ CallToRegisterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CallToResgiterComponent);
+    fixture = TestBed.createComponent(CallToRegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

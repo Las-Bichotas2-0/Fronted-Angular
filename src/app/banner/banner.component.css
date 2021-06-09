@@ -1,20 +1,28 @@
-.fix-img{
+.fix-img {
   max-width: 100%;
   height: auto;
 }
-.font-title{
+.font-title {
   font-size: 96px;
 }
-.font-subtitle{
+.font-subtitle {
   font-size: 20px;
 }
 
-.font-subtitle-sub{
+.font-subtitle-sub {
   font-size: 15px;
 }
-.mb-4{
+.mb-4 {
   margin-bottom: 4rem;
 }
-.p-cent{
+.mr-5 {
+  margin-right: 2rem;
+}
+.p-cent {
   padding-right: 2rem;
+}
+
+.button-color {
+  background-color: #2699fb;
+  color: #ffffff;
 }
