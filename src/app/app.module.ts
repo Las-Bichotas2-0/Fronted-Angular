@@ -5,27 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './banner/banner.component';
-import {NavbarComponent} from "./navbar/navbar.component";
-
-
-
+import { NavbarComponent } from "./navbar/navbar.component";
+import { MoreSpokenComponent } from "./more-spoken/more-spoken.component";
 
 //Material
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { CallToRegisterComponent } from './call-to-register/call-to-register.component';
-import {MatListModule} from '@angular/material/list';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     BannerComponent,
-    CallToRegisterComponent
+    CallToRegisterComponent,
+    MoreSpokenComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +37,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
