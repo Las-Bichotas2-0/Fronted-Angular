@@ -18,6 +18,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     NavbarComponent,
     BannerComponent,
     CallToRegisterComponent,
-    MoreSpokenComponent
+    MoreSpokenComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
