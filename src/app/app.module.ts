@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     BannerComponent,
     CallToRegisterComponent,
     MoreSpokenComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
