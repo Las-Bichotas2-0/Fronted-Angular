@@ -25,6 +25,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -39,6 +40,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FooterComponent,
     FeedbackComponent,
     DialogComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
