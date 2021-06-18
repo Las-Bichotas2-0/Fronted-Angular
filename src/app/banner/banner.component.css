@@ -3,14 +3,14 @@
   height: auto;
 }
 .font-title {
-  font-size: 96px;
+  font-size: clamp(40px,5vw, 90px); 
 }
 .font-subtitle {
-  font-size: 20px;
+  font-size: clamp(13px,5vw, 20px); 
 }
 
 .font-subtitle-sub {
-  font-size: 15px;
+  font-size: clamp(13px,5vw, 15px); 
 }
 .mb-4 {
   margin-bottom: 4rem;
