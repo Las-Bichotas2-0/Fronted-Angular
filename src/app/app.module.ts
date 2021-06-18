@@ -26,7 +26,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProfileComponent } from './profile/profile.component';
-
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -56,7 +56,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatTabsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
