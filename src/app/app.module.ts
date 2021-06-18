@@ -22,6 +22,11 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +38,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     TestimonialsComponent,
     FooterComponent,
     FeedbackComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +52,12 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatIconModule,
     MatSidenavModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
