@@ -20,6 +20,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { FooterComponent } from './footer/footer.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     MoreSpokenComponent,
     TestimonialsComponent,
     FooterComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { FooterComponent } from './footer/footer.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
