@@ -28,7 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { BadgeComponent } from './badge/badge.component';
 import { HomeComponent } from './home/home.component';
-import {FlexLayoutModule} from "@angular/flex-layout";
+//import {FlexLayoutModule} from "@angular/flex-layout";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
@@ -68,7 +68,7 @@ import { MainComponent } from './main/main.component';
     MatDialogModule,
     MatSnackBarModule,
     MatChipsModule,
-    FlexLayoutModule
+    //FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
