@@ -29,6 +29,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import { BadgeComponent } from './badge/badge.component';
 import { HomeComponent } from './home/home.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     ProfileComponent,
     BadgeComponent,
     HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    MainComponent,
 
   ],
   imports: [
