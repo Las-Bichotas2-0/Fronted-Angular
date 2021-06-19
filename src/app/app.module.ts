@@ -32,6 +32,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
+import { SessionComponent } from './session/session.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MainComponent } from './main/main.component';
     LoginComponent,
     RegisterComponent,
     MainComponent,
+    SessionComponent,
 
   ],
   imports: [
