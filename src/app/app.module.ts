@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './banner/banner.component';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { MoreSpokenComponent } from "./more-spoken/more-spoken.component";
+import { RankingStudentComponent } from './ranking-student/ranking-student.component';
 
 //Material
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -30,6 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     MoreSpokenComponent,
     TestimonialsComponent,
     FooterComponent,
+    RankingStudentComponent,
+
   ],
   imports: [
     BrowserModule,

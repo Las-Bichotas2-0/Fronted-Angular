@@ -1,0 +1,32 @@
+.first-card {
+  min-width: 200px;
+  background-color:#ffeb3b;
+}
+.fard {
+  min-width: 400px;
+  min-height: 200px;
+  background-color:#ffeb3b;
+}
+.second-card {
+  min-width:  200px;
+  background-color: #e8eaf6;
+}
+.third-card {
+  min-width:  200px;
+  background-color: #ffc107;
+}
+.example-header-image {
+  background-image: url('https://cdn.vuetifyjs.com/images/john.jpg');
+  background-size:cover;
+}
+.example-header-image2 {
+  background-image: url('https://avatars0.githubusercontent.com/u/9064066?v=4&s=460');
+  background-size:cover;
+}
+.example-header-image3 {
+  background-image: url('https://cdn.vuetifyjs.com/images/profiles/marcus.jpg');
+  background-size:cover;
+}
+.container {
+  background-color: #ffffff;
+}
