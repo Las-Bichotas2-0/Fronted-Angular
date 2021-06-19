@@ -3,7 +3,6 @@
 }
 
 .example-header-image {
-  background-image: url('https://cdn.vuetifyjs.com/images/john.jpg');
   background-size: cover;
 }
 
