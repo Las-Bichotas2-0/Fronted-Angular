@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './banner/banner.component';
-import { MoreSpokenComponent } from "./more-spoken/more-spoken.component";
+import { MoreSpokenComponent } from './more-spoken/more-spoken.component';
 import { RankingStudentComponent } from './ranking-student/ranking-student.component';
 
 //Material
@@ -13,22 +13,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CallToRegisterComponent } from './call-to-register/call-to-register.component';
 import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProfileComponent } from './profile/profile.component';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 import { BadgeComponent } from './badge/badge.component';
 import { HomeComponent } from './home/home.component';
-import {FlexLayoutModule} from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
@@ -52,7 +52,6 @@ import { SessionComponent } from './session/session.component';
     RegisterComponent,
     MainComponent,
     SessionComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -70,10 +69,9 @@ import { SessionComponent } from './session/session.component';
     MatDialogModule,
     MatSnackBarModule,
     MatChipsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
