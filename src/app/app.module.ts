@@ -28,6 +28,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProfileComponent } from './profile/profile.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { BadgeComponent } from './badge/badge.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { BadgeComponent } from './badge/badge.component';
     DialogComponent,
     ProfileComponent,
     BadgeComponent,
+    HomeComponent,
 
   ],
   imports: [
