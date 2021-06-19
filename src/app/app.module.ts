@@ -33,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { SessionComponent } from './session/session.component';
+import { DialogSessionComponent } from './session/dialog-session/dialog-session.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SessionComponent } from './session/session.component';
     RegisterComponent,
     MainComponent,
     SessionComponent,
+    DialogSessionComponent,
   ],
   imports: [
     BrowserModule,
