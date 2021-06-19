@@ -27,6 +27,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ProfileComponent } from './profile/profile.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { BadgeComponent } from './badge/badge.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {MatChipsModule} from '@angular/material/chips';
     FeedbackComponent,
     DialogComponent,
     ProfileComponent,
+    BadgeComponent,
   ],
   imports: [
     BrowserModule,
