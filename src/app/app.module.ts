@@ -42,6 +42,7 @@ import { SubscriptionsComponent } from './subscriptions/subscriptions.component'
 import { StudentRegisterComponent } from './student-register/student-register.component';
 import { TuthorRegisterComponent } from './tuthor-register/tuthor-register.component';
 import {MatSelectModule} from '@angular/material/select';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {MatSelectModule} from '@angular/material/select';
     SubscriptionsComponent,
     StudentRegisterComponent,
     TuthorRegisterComponent,
+    TermsConditionsComponent,
   ],
   imports: [
     BrowserModule,
