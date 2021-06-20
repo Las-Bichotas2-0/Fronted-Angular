@@ -1,1 +1,53 @@
-<p>subscriptions works!</p>
+<div class="container">
+  <div>
+    <mat-card class="tiny-card">
+      <mat-card-title>Monthly</mat-card-title>
+      <mat-card-content>
+        <ul>
+          <li>Cancel at any time</li>
+          <li>We accept as payment method all your credit cards.</li>
+          <li>No commissions or late payments</li>
+          <li>Practice from your cell phone or computer</li>
+        </ul>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-chip-list>
+        <mat-chip>Before: $39.99</mat-chip>
+        <mat-chip selected color="primary" class="back-color-web"
+          >Before: $30</mat-chip
+        >
+      </mat-chip-list>
+      <mat-card-actions>
+        <button mat-raised-button routerLink="/register/tutor">SELECT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card class="tiny-card">
+      <mat-card-title>All Full Year</mat-card-title>
+      <mat-card-content>
+        <p>
+          Register as a tutor, specialized in one or more languages at native
+          level.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button routerLink="/register/tutor">SELECT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card class="tiny-card">
+      <mat-card-title>Summer Time</mat-card-title>
+      <mat-card-content>
+        <p>
+          Register as a student, get trained in one or more languages with
+          native tutors.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button routerLink="/register/student">SELECT</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
