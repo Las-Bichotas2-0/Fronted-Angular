@@ -1,0 +1,18 @@
+.tiny-card {
+  max-width: 700px;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.back-color-web {
+  background-color: #2699fb;
+}
+
+.card-component{
+  padding: 1rem 1rem 0.5rem 0rem;
+}
