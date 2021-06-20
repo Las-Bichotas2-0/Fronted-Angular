@@ -15,17 +15,17 @@
 
   </div>
 </mat-toolbar>
-<mat-sidenav-container fxFlexFill class="example-container">
+<mat-sidenav-container fxFlexFill class="example-container"  >
 
-  <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="false">
-    <div fxLayout="column">
+  <mat-sidenav  color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="false" style="width:10%" fxLayoutAlign="end center">
+    <div fxLayout="column" >
 
-      <a mat-raised-button  routerLink="/">Home</a>
-      <a mat-raised-button routerLink="/register">Register</a>
-      <a mat-raised-button  routerLink="/login">Login</a>
-      <a mat-raised-button  routerLink="/profile">Profile</a>
-      <a mat-raised-button  routerLink="/main">Main</a>
-      
+      <a mat-button  routerLink="/">Home</a>
+      <a mat-button routerLink="/register">Register</a>
+      <a mat-button  routerLink="/login">Login</a>
+      <a mat-button  routerLink="/profile">Profile</a>
+      <a mat-button  routerLink="/main">Main</a>
+
     </div>
   </mat-sidenav>
 
