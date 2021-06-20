@@ -12,3 +12,7 @@
 .back-color-web {
   background-color: #2699fb;
 }
+
+.card-component{
+  padding: 1rem 1rem 0.5rem 0rem;
+}
