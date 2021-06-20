@@ -41,6 +41,7 @@ import { RegisterRoleComponent } from './register-role/register-role.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { StudentRegisterComponent } from './student-register/student-register.component';
 import { TuthorRegisterComponent } from './tuthor-register/tuthor-register.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { TuthorRegisterComponent } from './tuthor-register/tuthor-register.compo
     FlexLayoutModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
