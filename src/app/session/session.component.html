@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>Session</mat-card-title>
+  <mat-chip-list>
+    <mat-chip>6:00pm</mat-chip>
+    <mat-chip>7:00pm</mat-chip>
+  </mat-chip-list>
+  <mat-card-content>
+    In the conversation you have to bring topics on the topic to discuss.
+  </mat-card-content>
+
+  <mat-chip-list>
+    <mat-chip>Topic</mat-chip>
+    <mat-chip>Language</mat-chip>
+  </mat-chip-list>
+  <mat-card-subtitle></mat-card-subtitle>
+
+  <mat-card-actions>
+    <button mat-raised-button>CANCEL</button>
+    <button (click)="openDialog()" class="color-of-web" mat-raised-button color="primary">
+      ENTRY
+    </button>
+  </mat-card-actions>
+</mat-card>

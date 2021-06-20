@@ -5,23 +5,27 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
+
   <span > ILanguage</span>
   <div class="spacer"></div>
   <div fxShow="true" fxHide.lt-md="true">
     <a mat-button  routerLink="/">Home</a>
     <a mat-button  routerLink="/register">Register</a>
     <a mat-button  routerLink="/login">Login</a>
+
   </div>
 </mat-toolbar>
 <mat-sidenav-container fxFlexFill class="example-container">
 
   <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="false">
     <div fxLayout="column">
+
       <a mat-raised-button  routerLink="/">Home</a>
       <a mat-raised-button routerLink="/register">Register</a>
       <a mat-raised-button  routerLink="/login">Login</a>
-      <a mat-raised-button  routerLink="/">Perfil</a>
-      <a mat-raised-button  routerLink="/">Main</a>
+      <a mat-raised-button  routerLink="/profile">Profile</a>
+      <a mat-raised-button  routerLink="/main">Main</a>
+      
     </div>
   </mat-sidenav>
 
