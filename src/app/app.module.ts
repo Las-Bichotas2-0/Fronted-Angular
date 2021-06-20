@@ -36,8 +36,7 @@ import { SessionComponent } from './session/session.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from "@angular/forms";
-
-
+import { DialogSessionComponent } from './session/dialog-session/dialog-session.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +56,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     RegisterComponent,
     MainComponent,
     SessionComponent,
+    DialogSessionComponent,
   ],
   imports: [
     BrowserModule,
