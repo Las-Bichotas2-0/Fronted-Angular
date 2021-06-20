@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {DialogTermComponent} from './dialog-term/dialog-term.component';
 @Component({
   selector: 'app-terms-conditions',
   templateUrl: './terms-conditions.component.html',
   styleUrls: ['./terms-conditions.component.css']
 })
-export class TermsConditionsComponent implements OnInit {
+export class TermsConditionsComponent{
 
-  constructor() { }
+constructor(public dialog: MatDialog) {}
 
-  ngOnInit(): void {
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogTermComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
