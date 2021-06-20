@@ -37,6 +37,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DialogSessionComponent } from './session/dialog-session/dialog-session.component';
+import { RegisterRoleComponent } from './register-role/register-role.component';
+import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
+import { StudentRegisterComponent } from './student-register/student-register.component';
+import { TuthorRegisterComponent } from './tuthor-register/tuthor-register.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +61,10 @@ import { DialogSessionComponent } from './session/dialog-session/dialog-session.
     MainComponent,
     SessionComponent,
     DialogSessionComponent,
+    RegisterRoleComponent,
+    SubscriptionsComponent,
+    StudentRegisterComponent,
+    TuthorRegisterComponent,
   ],
   imports: [
     BrowserModule,
