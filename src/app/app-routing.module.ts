@@ -9,6 +9,7 @@ import {RegisterRoleComponent} from './register-role/register-role.component';
 import {StudentRegisterComponent} from './student-register/student-register.component';
 import {TuthorRegisterComponent} from './tuthor-register/tuthor-register.component';
 import {SubscriptionsComponent} from './subscriptions/subscriptions.component';
+import {SessionComponent} from './session/session.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -39,8 +40,23 @@ const routes: Routes = [
       }
     ],
   },
-  { path: 'main', component: MainComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'main',
+    children: [
+      {
+        path: '',
+        pathMatch: 'prefix',
+        redirectTo: 'session'
+      },
+      {
+        path: 'session',
+        component: SessionComponent 
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      }
+    ]
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
