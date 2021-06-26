@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SubscriptionApiService } from './subscription-api.service';
 
-describe('StudentsApiService', () => {
+describe('SubscriptionApiService', () => {
   let service: SubscriptionApiService;
 
   beforeEach(() => {

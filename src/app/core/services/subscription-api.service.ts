@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
-import { Subscription } from "../models/inputs/subscription-input";
+import { SubscriptionInput } from "../models/inputs/subscription-input";
+import { SubscriptionOutput } from "../models/outputs/subscription-output";
 import { catchError, retry } from "rxjs/operators";
 
 @Injectable({ providedIn: 'root' })
@@ -22,12 +23,36 @@ export class SubscriptionApiService{
     return throwError('Something happened with request, please try again later.').toPromise();
   }
 
-  addSubscription(item: any): Promise<Subscription>{
-    return this.http.post<Subscription>(this.basePath, JSON.stringify(item), this.httpOptions)
+  addSubscription(item: any): Promise<SubscriptionInput>{
+    return this.http.post<SubscriptionInput>(this.basePath, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 
+  getSubscriptionById(id: number): Promise<SubscriptionOutput> {
+    return this.http.get<SubscriptionOutput>(`${this.basePath}/${id}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError)).toPromise();
+  }
 
+  getSubscriptionByName(name: String): Promise<SubscriptionOutput> {
+    return this.http.get<SubscriptionOutput>(`${this.basePath}/${name}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError)).toPromise();
+  }
+
+  getSubscriptionByPrice(price: number): Promise<SubscriptionOutput> {
+    return this.http.get<SubscriptionOutput>(`${this.basePath}/${price}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError)).toPromise();
+  }
+
+  getAllSubscriptions(): Promise<SubscriptionOutput>{
+    return this.http.get<SubscriptionOutput>(this.basePath)
+      .pipe(retry(2), catchError(this.handleError)).toPromise();
+  }
+
+  // Update Student
+  updateStudent(id: number, item: SubscriptionInput): Promise<SubscriptionInput>{
+    return this.http.put<SubscriptionInput>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError)).toPromise();
+  }
 
 
 }
