@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BannerComponent } from './banner/banner.component';
-import { MoreSpokenComponent } from './more-spoken/more-spoken.component';
-import { RankingStudentComponent } from './ranking-student/ranking-student.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { MoreSpokenComponent } from './components/more-spoken/more-spoken.component';
+import { RankingStudentComponent } from './components/ranking-student/ranking-student.component';
 
 //Material
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -26,25 +26,25 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CallToRegisterComponent } from './call-to-register/call-to-register.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { FooterComponent } from './footer/footer.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BadgeComponent } from './badge/badge.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { MainComponent } from './main/main.component';
-import { SessionComponent } from './session/session.component';
-import { DialogSessionComponent } from './session/dialog-session/dialog-session.component';
-import { RegisterRoleComponent } from './register-role/register-role.component';
-import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
-import { StudentRegisterComponent } from './student-register/student-register.component';
-import { TuthorRegisterComponent } from './tuthor-register/tuthor-register.component';
-import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
-import { DialogTermComponent } from './terms-conditions/dialog-term/dialog-term.component';
+import { CallToRegisterComponent } from './components/call-to-register/call-to-register.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { MainComponent } from './pages/main/main.component';
+import { SessionComponent } from './components/session/session.component';
+import { DialogSessionComponent } from './components/session/dialog-session/dialog-session.component';
+import { RegisterRoleComponent } from './pages/register-role/register-role.component';
+import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.component';
+import { StudentRegisterComponent } from './components/student-register/student-register.component';
+import { TuthorRegisterComponent } from './components/tuthor-register/tuthor-register.component';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { DialogTermComponent } from './components/terms-conditions/dialog-term/dialog-term.component';
 
 @NgModule({
   declarations: [

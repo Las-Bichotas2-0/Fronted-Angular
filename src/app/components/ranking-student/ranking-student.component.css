@@ -30,17 +30,17 @@
   background-size: cover;
 }
 .medal-first-image {
-  background-image: url("../../assets/img/first-place.png");
+  background-image: url("../../../assets/img/first-place.png");
   background-size: cover;
 }
 
 .medal-second-image {
-  background-image: url("../../assets/img/second-place.png");
+  background-image: url("../../../assets/img/second-place.png");
   background-size: cover;
 }
 
 .medal-third-image {
-  background-image: url("../../assets/img/third-place.png");
+  background-image: url("../../../assets/img/third-place.png");
   background-size: cover;
 }
 .container {
