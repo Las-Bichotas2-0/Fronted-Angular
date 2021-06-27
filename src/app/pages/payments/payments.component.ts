@@ -16,4 +16,6 @@ export class PaymentsComponent implements OnInit {
     this.price = this.shared.getPrice();
   }
 
+
+
 }
