@@ -7,7 +7,7 @@ import { catchError, retry } from "rxjs/operators";
 
 @Injectable({ providedIn: 'root' })
 export class SubscriptionApiService{
-  basePath = 'https://ilanguage-api.herokuapp.com/';
+  basePath = 'https://60c2e09f917002001739da47.mockapi.io/subscription';
 
   constructor(private http: HttpClient) { }
 
@@ -43,9 +43,9 @@ export class SubscriptionApiService{
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 
-  getAllSubscriptions(): Promise<SubscriptionOutput>{
+  getAllSubscriptions(): Observable<SubscriptionOutput>{
     return this.http.get<SubscriptionOutput>(this.basePath)
-      .pipe(retry(2), catchError(this.handleError)).toPromise();
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   // Update Student
@@ -53,6 +53,7 @@ export class SubscriptionApiService{
     return this.http.put<SubscriptionInput>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
+
 
 
 }
