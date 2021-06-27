@@ -1,5 +1,8 @@
 <div class="container">
   <div>
+    <div layout="row">
+
+      <div class="col-md-6 col-sm-6">
     <mat-card class="tiny-card" *ngFor="let subscription of subscriptions">
       <mat-card-title>{{subscription.name}}</mat-card-title>
       <mat-card-content>
@@ -15,14 +18,19 @@
         <mat-chip-list>
           <mat-chip>{{subscription.id}}</mat-chip>
           <mat-chip selected color="primary" class="back-color-web"
-            >Before: $30</mat-chip
+            >Before: {{subscription.price}} $</mat-chip
           >
         </mat-chip-list>
       </div>
       <mat-card-actions>
-        <button mat-raised-button routerLink="/main">SELECT</button>
+        <button mat-raised-button (click)="goToPay(subscription.price)">SELECT</button>
       </mat-card-actions>
-    </mat-card>
+    </mat-card></div>
+    </div>
+  </div>
   </div>
 
-</div>
+
+
+
+

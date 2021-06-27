@@ -46,6 +46,10 @@ import { TuthorRegisterComponent } from './components/tuthor-register/tuthor-reg
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { DialogTermComponent } from './components/terms-conditions/dialog-term/dialog-term.component';
 import {HttpClientModule} from "@angular/common/http";
+import {MatTableModule} from "@angular/material/table";
+import { NgPaymentCardModule } from 'ng-payment-card';
+import { PaymentsComponent } from './pages/payments/payments.component';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +76,7 @@ import {HttpClientModule} from "@angular/common/http";
     TuthorRegisterComponent,
     TermsConditionsComponent,
     DialogTermComponent,
+    PaymentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,9 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     MatSelectModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    NgPaymentCardModule
 
   ],
   providers: [],

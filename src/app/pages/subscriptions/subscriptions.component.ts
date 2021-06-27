@@ -3,6 +3,8 @@ import {SubscriptionApiService} from "../../core/services/subscription-api.servi
 import {Router} from "@angular/router";
 import { SubscriptionOutput } from "../../core/models/outputs/subscription-output";
 import { AfterViewInit, ViewChild } from '@angular/core';
+import {SharedsService} from "../../shared/shareds.service";
+
 
 @Component({
   selector: 'app-subscriptions',
@@ -12,7 +14,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 export class SubscriptionsComponent implements OnInit, AfterViewInit {
   subscriptionData: SubscriptionOutput;
 
-  constructor(private subscriptionApi:SubscriptionApiService, private router: Router) {
+  constructor(private subscriptionApi:SubscriptionApiService, private router: Router, private shared: SharedsService) {
     this.subscriptionData = {} as SubscriptionOutput;
     this.subscriptions = [];
   }
@@ -39,4 +41,9 @@ export class SubscriptionsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
+  goToPay(price: number){
+    this.shared.setPrice(price);
+    this.router.navigate(['/register/pay']);
+    console.log(price);
+  }
 }

@@ -10,6 +10,9 @@ import {StudentRegisterComponent} from './components/student-register/student-re
 import {TuthorRegisterComponent} from './components/tuthor-register/tuthor-register.component';
 import {SubscriptionsComponent} from './pages/subscriptions/subscriptions.component';
 import {SessionComponent} from './components/session/session.component';
+import {PaymentsComponent} from './pages/payments/payments.component';
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -37,6 +40,10 @@ const routes: Routes = [
       {
         path: 'subscription',
         component : SubscriptionsComponent
+      },
+      {
+        path:'pay',
+        component: PaymentsComponent
       }
     ],
   },
