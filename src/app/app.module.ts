@@ -45,6 +45,7 @@ import { StudentRegisterComponent } from './components/student-register/student-
 import { TuthorRegisterComponent } from './components/tuthor-register/tuthor-register.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { DialogTermComponent } from './components/terms-conditions/dialog-term/dialog-term.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -94,6 +95,8 @@ import { DialogTermComponent } from './components/terms-conditions/dialog-term/d
     ReactiveFormsModule,
     MatSelectModule,
     MatCheckboxModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
