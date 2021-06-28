@@ -24,7 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CallToRegisterComponent } from './components/call-to-register/call-to-register.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
@@ -81,33 +81,34 @@ import { CreateSessionComponent } from './components/create-session/create-sessi
     PaymentsComponent,
     CreateSessionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatCardModule,
-    MatListModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatTabsModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatChipsModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    HttpClientModule,
-    MatTableModule,
-    NgPaymentCardModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatButtonModule,
+        MatCardModule,
+        MatListModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatTabsModule,
+        MatProgressSpinnerModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatChipsModule,
+        FlexLayoutModule,
+        MatInputModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatCheckboxModule,
+        HttpClientModule,
+        MatTableModule,
+        NgPaymentCardModule,
+        FormsModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

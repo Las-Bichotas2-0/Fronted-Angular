@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {TopicsApiService} from "../../core/services/topics-api.service";
 
 @Component({
   selector: 'app-create-session',
@@ -8,9 +9,32 @@ import {Router} from "@angular/router";
 })
 export class CreateSessionComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  selectedTopic: string | undefined;
+  topics: any[] = [];
+  languages: any[] = [];
+
+  constructor(private router: Router, private topicsApi: TopicsApiService) {
+    this.topics = [];
+    this.languages = [];
+  }
 
   ngOnInit(): void {
+    this.getAllTopics();
   }
+
+
+  getAllTopics(): void{
+    this.topicsApi.getAllSessions()
+      .then((response: any) =>{
+        for(let i = 0; i < response.content.length; i++){
+          this.topics.push(response.content[i]);
+        }
+        console.log(this.topics);
+      })
+      .catch((error)=>console.log(error))
+  }
+
+
+
 
 }
