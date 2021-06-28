@@ -28,9 +28,9 @@ export class SubscriptionsComponent implements OnInit, AfterViewInit {
 
   getAllSubscriptions(): void{
     this.subscriptionApi.getAllSubscriptions().subscribe((response: any)=>{
-      for (let i=0; i<response.length; i++){
+      for (let i=0; i<response.content.length; i++){
         // @ts-ignore
-        this.subscriptions.push(response[i]);
+        this.subscriptions.push(response.content[i]);
       }
       console.log(response);
 

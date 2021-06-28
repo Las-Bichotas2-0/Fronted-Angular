@@ -1,16 +1,16 @@
 <div class="container">
-  <mat-card class="size">
+  <mat-card class="size" *ngFor="let sesion of sessions">
     <mat-card-title>Session</mat-card-title>
     <mat-chip-list class="spacer">
-      <mat-chip>6:00pm</mat-chip>
-      <mat-chip>7:00pm</mat-chip>
+      <mat-chip>{{sesion.startAt}}</mat-chip>
+      <mat-chip>{{sesion.endAt}}</mat-chip>
     </mat-chip-list>
     <mat-card-content>
-      In the conversation you have to bring topics on the topic to discuss.
+      {{sesion.information}}
     </mat-card-content>
     <mat-chip-list class="spacer">
-      <mat-chip>Topic</mat-chip>
-      <mat-chip>Language</mat-chip>
+      <mat-chip>{{sesion.topic}}</mat-chip>
+      <mat-chip>{{sesion.state}}</mat-chip>
     </mat-chip-list>
     <mat-card-actions>
       <button mat-raised-button>CANCEL</button>

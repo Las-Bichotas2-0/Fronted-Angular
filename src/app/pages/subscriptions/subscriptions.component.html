@@ -1,9 +1,6 @@
 <div class="container">
-  <div>
-    <div layout="row">
 
-      <div class="col-md-6 col-sm-6">
-    <mat-card class="tiny-card" *ngFor="let subscription of subscriptions">
+    <mat-card class="tiny-card size" *ngFor="let subscription of subscriptions">
       <mat-card-title>{{subscription.name}}</mat-card-title>
       <mat-card-content>
         <ul>
@@ -25,10 +22,9 @@
       <mat-card-actions>
         <button mat-raised-button (click)="goToPay(subscription.price)">SELECT</button>
       </mat-card-actions>
-    </mat-card></div>
-    </div>
-  </div>
-  </div>
+    </mat-card>
+</div>
+
 
 
 

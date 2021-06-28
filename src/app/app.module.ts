@@ -51,6 +51,7 @@ import { NgPaymentCardModule } from 'ng-payment-card';
 import { PaymentsComponent } from './pages/payments/payments.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
