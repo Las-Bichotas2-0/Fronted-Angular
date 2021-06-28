@@ -41,6 +41,11 @@ export class CreateSessionComponent implements OnInit {
     this.getAllLanguages();
     this.form.get('topic')?.valueChanges.subscribe(data =>  {
       console.log(data);
+      if(data == 0){
+        this.createNewSesion = true;
+      }
+
+      console.log(this.createNewSesion);
     })
   }
 
@@ -73,11 +78,7 @@ export class CreateSessionComponent implements OnInit {
     console.log(this.createNewSesion);
   }
 
-  makeFalse(): void{
-    console.log(this.createNewSesion);
-    this.createNewSesion = true;
-    console.log(this.createNewSesion);
-  }
+
 
 
 
