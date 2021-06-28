@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {TopicsApiService} from "../../core/services/topics-api.service";
 import {LanguagesApiService} from "../../core/services/languages-api.service";
-import {FormControl} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-session',
@@ -11,6 +11,8 @@ import {FormControl} from "@angular/forms";
 })
 export class CreateSessionComponent implements OnInit {
 
+  form: FormGroup;
+  createNewSesion: boolean = false;
   SelectedFinalDate: Date | undefined;
   selectedInitialDate: Date | undefined;
   selectedTopic: string | undefined;
@@ -18,14 +20,28 @@ export class CreateSessionComponent implements OnInit {
   topics: any[] = [];
   languages: any[] = [];
 
-  constructor(private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService) {
+  constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService) {
     this.topics = [];
     this.languages = [];
+    this.form = this.fb.group({
+      topic: [[]],
+      language: [[], Validators.required],
+      initialDate: [Date, Validators.required],
+      endDate: [Date, Validators.required],
+      info: ['', Validators.required]
+    })
   }
 
   ngOnInit(): void {
+    this.topics.push({
+      id: 0,
+      name: 'None'
+    })
     this.getAllTopics();
     this.getAllLanguages();
+    this.form.get('topic')?.valueChanges.subscribe(data =>  {
+      console.log(data);
+    })
   }
 
 
@@ -54,7 +70,16 @@ export class CreateSessionComponent implements OnInit {
 
   createSession(): void{
     console.log(this.selectedInitialDate);
+    console.log(this.createNewSesion);
   }
+
+  makeFalse(): void{
+    console.log(this.createNewSesion);
+    this.createNewSesion = true;
+    console.log(this.createNewSesion);
+  }
+
+
 
 
 
