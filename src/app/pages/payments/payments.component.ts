@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedsService} from "../../shared/shareds.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-payments',
@@ -15,6 +16,8 @@ export class PaymentsComponent implements OnInit {
   ngOnInit(): void {
     this.price = this.shared.getPrice();
   }
+
+
 
 
 
