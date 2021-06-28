@@ -14,6 +14,7 @@ import {PaymentsComponent} from './pages/payments/payments.component';
 import {CreateSessionComponent} from "./components/create-session/create-session.component";
 
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

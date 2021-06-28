@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card class="sign-up">
+  <mat-card raisedElevation="16" class="z-depth" >
     <mat-card-title>Create a new session</mat-card-title>
     <mat-card-subtitle
     >Give us some information about your new session</mat-card-subtitle
@@ -11,18 +11,7 @@
       </mat-form-field>
     </mat-card-content>
 
-    <mat-card-content>
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Enter your email</mat-label>
-        <input
-          matInput
-          placeholder="pat@example.com"
 
-          required
-        />
-
-      </mat-form-field>
-    </mat-card-content>
     <mat-card-content>
       <mat-form-field appearance="fill">
         <mat-label>Select Topic</mat-label>
@@ -35,37 +24,40 @@
     </mat-card-content>
 
     <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>Select Language</mat-label>
-        <mat-select [(ngModel)]="selectedTopic" name="language">
-          <mat-option *ngFor="let language of languages" [value]="topic.id">
-            {{topic.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-content>
-      <mat-card-subtitle>Tell us about yourself</mat-card-subtitle>
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Description</mat-label>
-        <textarea matInput></textarea>
+      <mat-form-field>
+        <input matInput type="datetime-local" placeholder="start date" [(ngModel)]="selectedInitialDate">
       </mat-form-field>
     </mat-card-content>
 
     <mat-card-content>
-      <mat-checkbox color="primary"
-      >Accept <app-terms-conditions></app-terms-conditions
-      ></mat-checkbox>
+      <mat-form-field>
+
+        <input matInput type="datetime-local" placeholder="end date" [(ngModel)]="SelectedFinalDate">
+      </mat-form-field>
     </mat-card-content>
+
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Language</mat-label>
+        <mat-select [(ngModel)]="selectedLanguage" name="language">
+          <mat-option *ngFor="let language of languages" [value]="language.id">
+            {{language.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+
+
+
     <mat-card-actions>
       <button mat-raised-button routerLink="/register/role">CANCEL</button>
       <button
         mat-raised-button
         color="primary"
         class="back-color-web"
-        routerLink="/register/subscription"
+        (click)="createSession()"
       >
-        SIGN UP
+        CREATE
       </button>
     </mat-card-actions>
   </mat-card>

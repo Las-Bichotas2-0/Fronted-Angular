@@ -50,7 +50,8 @@ import {MatTableModule} from "@angular/material/table";
 import { NgPaymentCardModule } from 'ng-payment-card';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { CreateSessionComponent } from './components/create-session/create-session.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -81,35 +82,37 @@ import { CreateSessionComponent } from './components/create-session/create-sessi
     PaymentsComponent,
     CreateSessionComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatGridListModule,
-        MatButtonModule,
-        MatCardModule,
-        MatListModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatTabsModule,
-        MatProgressSpinnerModule,
-        MatDialogModule,
-        MatSnackBarModule,
-        MatChipsModule,
-        FlexLayoutModule,
-        MatInputModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatSelectModule,
-        MatCheckboxModule,
-        HttpClientModule,
-        MatTableModule,
-        NgPaymentCardModule,
-        FormsModule
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatChipsModule,
+    FlexLayoutModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    HttpClientModule,
+    MatTableModule,
+    NgPaymentCardModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
-    ],
-  providers: [],
+  ],
+  providers: [MatDatepickerModule, MatNativeDateModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

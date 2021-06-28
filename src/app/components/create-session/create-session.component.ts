@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {TopicsApiService} from "../../core/services/topics-api.service";
 import {LanguagesApiService} from "../../core/services/languages-api.service";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-create-session',
@@ -10,6 +11,8 @@ import {LanguagesApiService} from "../../core/services/languages-api.service";
 })
 export class CreateSessionComponent implements OnInit {
 
+  SelectedFinalDate: Date | undefined;
+  selectedInitialDate: Date | undefined;
   selectedTopic: string | undefined;
   selectedLanguage: string | undefined;
   topics: any[] = [];
@@ -48,6 +51,10 @@ export class CreateSessionComponent implements OnInit {
       .catch((e) => console.log(e));
   }
 
+
+  createSession(): void{
+    console.log(this.selectedInitialDate);
+  }
 
 
 
