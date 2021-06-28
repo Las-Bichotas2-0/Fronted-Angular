@@ -49,6 +49,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import { NgPaymentCardModule } from 'ng-payment-card';
 import { PaymentsComponent } from './pages/payments/payments.component';
+import { CreateSessionComponent } from './components/create-session/create-session.component';
 
 
 
@@ -78,6 +79,7 @@ import { PaymentsComponent } from './pages/payments/payments.component';
     TermsConditionsComponent,
     DialogTermComponent,
     PaymentsComponent,
+    CreateSessionComponent,
   ],
   imports: [
     BrowserModule,
