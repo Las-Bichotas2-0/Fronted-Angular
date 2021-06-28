@@ -10,16 +10,13 @@
 .card-component{
   padding: 1rem 1rem 0.5rem 0rem;
 }
-.size{
-  max-width: 900px;
-  margin-left: 3% !important;
-  margin-right:3% !important;
-  margin-top:10%;
-  margin-bottom: 10%;
-}
+
 .container{
-  display: flex;
+  display:grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+  justify-content:center;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
 }

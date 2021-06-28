@@ -11,6 +11,8 @@ import {TuthorRegisterComponent} from './components/tuthor-register/tuthor-regis
 import {SubscriptionsComponent} from './pages/subscriptions/subscriptions.component';
 import {SessionComponent} from './components/session/session.component';
 import {PaymentsComponent} from './pages/payments/payments.component';
+import {CreateSessionComponent} from "./components/create-session/create-session.component";
+
 
 
 const routes: Routes = [
@@ -61,6 +63,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'create-session',
+        component: CreateSessionComponent
       }
     ]
   },

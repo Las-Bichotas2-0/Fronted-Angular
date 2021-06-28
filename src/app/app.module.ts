@@ -24,7 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CallToRegisterComponent } from './components/call-to-register/call-to-register.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
@@ -49,6 +49,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatTableModule} from "@angular/material/table";
 import { NgPaymentCardModule } from 'ng-payment-card';
 import { PaymentsComponent } from './pages/payments/payments.component';
+import { CreateSessionComponent } from './components/create-session/create-session.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 
@@ -78,6 +81,7 @@ import { PaymentsComponent } from './pages/payments/payments.component';
     TermsConditionsComponent,
     DialogTermComponent,
     PaymentsComponent,
+    CreateSessionComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,10 +107,13 @@ import { PaymentsComponent } from './pages/payments/payments.component';
     MatCheckboxModule,
     HttpClientModule,
     MatTableModule,
-    NgPaymentCardModule
+    NgPaymentCardModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
-  providers: [],
+  providers: [MatDatepickerModule, MatNativeDateModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {throwError} from "rxjs";
-import {SessionOutput} from "../models/outputs/session-output"
-import {SubscriptionInput} from "../models/inputs/subscription-input";
+import {TopicsInput} from "../models/inputs/topics-input";
+import {TopicsOutput} from "../models/outputs/topics-output";
 import {catchError, retry} from "rxjs/operators";
-import{SessionInput} from "../models/inputs/session-input";
 
 @Injectable({
   providedIn: 'root'
 })
-export class SessionApiService {
+export class TopicsApiService {
 
-  basePath='https://ilanguage-318118.rj.r.appspot.com/api/sessions';
+  basePath='https://ilanguage-318118.rj.r.appspot.com/api/topic';
 
   constructor(private http: HttpClient) { }
 
@@ -27,14 +26,15 @@ export class SessionApiService {
     return throwError('Something happened with request, please try again later.').toPromise();
   }
 
-  //? TODO:  do i have to replace for SessionInput?
-  addSession(data: any): Promise<SessionInput>{
-    return this.http.post<SessionInput>(this.basePath, JSON.stringify(data), this.httpOptions)
+  addSession(data: any): Promise<TopicsInput>{
+    return this.http.post<TopicsInput>(this.basePath, JSON.stringify(data), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 
-  getAllSessions(): Promise<SessionOutput>{
-    return this.http.get<SessionOutput>(this.basePath)
+  getAllSessions(): Promise<TopicsOutput>{
+    return this.http.get<TopicsOutput>(this.basePath)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
+
+
 }
