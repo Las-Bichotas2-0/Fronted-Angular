@@ -1,5 +1,9 @@
 .size{
   max-width: 900px;
+  margin-left: 3% !important;
+  margin-right:3% !important;
+  margin-top:10%;
+  margin-bottom: 10%;
 }
 .container{
   display: flex;
