@@ -1,15 +1,13 @@
 .size{
-  max-width: 900px;
-  margin-left: 3% !important;
-  margin-right:3% !important;
-  margin-top:10%;
-  margin-bottom: 10%;
+
 }
 .container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+display:grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+  margin: 1rem;
 }
 .spacer{
   padding: 0.5rem;
