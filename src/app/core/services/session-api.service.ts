@@ -4,6 +4,7 @@ import {throwError} from "rxjs";
 import {SessionOutput} from "../models/outputs/session-output"
 import {SubscriptionInput} from "../models/inputs/subscription-input";
 import {catchError, retry} from "rxjs/operators";
+import{SessionInput} from "../models/inputs/session-input";
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,8 @@ export class SessionApiService {
   }
 
   //? TODO:  do i have to replace for SessionInput?
-  addSession(data: any): Promise<SessionOutput>{
-    return this.http.post<SessionOutput>(this.basePath, JSON.stringify(data), this.httpOptions)
+  addSession(data: any): Promise<SessionInput>{
+    return this.http.post<SessionInput>(this.basePath, JSON.stringify(data), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 

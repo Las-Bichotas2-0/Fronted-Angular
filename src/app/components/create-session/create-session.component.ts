@@ -3,6 +3,8 @@ import {Router} from "@angular/router";
 import {TopicsApiService} from "../../core/services/topics-api.service";
 import {LanguagesApiService} from "../../core/services/languages-api.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {SessionApiService} from "../../core/services/session-api.service";
+import {SessionInput} from "../../core/models/inputs/session-input";
 
 @Component({
   selector: 'app-create-session',
@@ -11,19 +13,19 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class CreateSessionComponent implements OnInit {
 
+
+  loading: boolean = false;
   form: FormGroup;
   createNewSesion: boolean = false;
-  SelectedFinalDate: Date | undefined;
-  selectedInitialDate: Date | undefined;
-  selectedTopic: string | undefined;
-  selectedLanguage: string | undefined;
   topics: any[] = [];
   languages: any[] = [];
+  newTopicNameValue: string | undefined;
 
-  constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService) {
+  constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService, private sessionApi: SessionApiService) {
     this.topics = [];
     this.languages = [];
     this.form = this.fb.group({
+      newTopicName: '',
       topic: [[]],
       language: [[], Validators.required],
       initialDate: [Date, Validators.required],
@@ -39,12 +41,12 @@ export class CreateSessionComponent implements OnInit {
     })
     this.getAllTopics();
     this.getAllLanguages();
+
     this.form.get('topic')?.valueChanges.subscribe(data =>  {
       console.log(data);
       if(data == 0){
         this.createNewSesion = true;
       }
-
       console.log(this.createNewSesion);
     })
   }
@@ -74,8 +76,58 @@ export class CreateSessionComponent implements OnInit {
 
 
   createSession(): void{
-    console.log(this.selectedInitialDate);
-    console.log(this.createNewSesion);
+    if(this.createNewSesion){
+      // @ts-ignore
+      this.createNewTopic(this.form.get('newTopicName').value);
+      // @ts-ignore
+      this.newTopicNameValue = this.form.get('newTopicName').value;
+    }
+    // @ts-ignore
+    this.newTopicNameValue = this.form.get('topic').value;
+
+
+    // @ts-ignore
+    const endsNewTmp = this.form.get('endDate').value;
+    // @ts-ignore
+    const initialDateTmp = this.form.get('initialDate').value;
+    const linkTmp = `www.zoom.com/${this.newTopicNameValue}`;
+    const stateTmp = "active";
+    const topicTmp = this.newTopicNameValue;
+    // @ts-ignore
+    const infoTmp = this.form.get('info').value;
+
+    this.sessionApi.addSession({
+      ed: endsNewTmp,
+      idt: initialDateTmp,
+      linkTmp,
+      stateTmp,
+      topicTmp,
+      infoTmp
+    })
+      .then((response) => {
+        console.log(response);
+        this.router.navigate(['main']);
+      })
+      .catch((e) => console.log(e));
+
+  }
+
+
+
+  createNewTopic(name: string): void{
+    this.loadingFunction();
+    this.topicsApi.addSession(name).then(r => {
+      console.log(r);
+    })
+      .catch((error)=> console.log(error));
+  }
+
+
+  loadingFunction(){
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000)
   }
 
 
