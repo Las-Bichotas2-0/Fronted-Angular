@@ -76,39 +76,39 @@ export class CreateSessionComponent implements OnInit {
 
 
   createSession(): void{
+    this.loading = true;
     if(this.createNewSesion){
       // @ts-ignore
       this.createNewTopic(this.form.get('newTopicName').value);
       // @ts-ignore
-      this.newTopicNameValue = this.form.get('newTopicName').value;
+      this.newTopicNameValue = this.form.get('newTopicName').value.name;
     }
     // @ts-ignore
     this.newTopicNameValue = this.form.get('topic').value;
 
 
-    // @ts-ignore
-    const endsNewTmp = this.form.get('endDate').value;
-    // @ts-ignore
-    const initialDateTmp = this.form.get('initialDate').value;
-    const linkTmp = `www.zoom.com/${this.newTopicNameValue}`;
-    const stateTmp = "active";
-    const topicTmp = this.newTopicNameValue;
-    // @ts-ignore
-    const infoTmp = this.form.get('info').value;
+    const newSessionFormat={
+      // @ts-ignore
+      endAt:this.form.get('endDate').value,
+      // @ts-ignore
+      startAt: this.form.get('initialDate').value,
+      link: `www.zoom.com/${this.newTopicNameValue}`,
+      state: 'active',
+      topic: this.newTopicNameValue,
+      // @ts-ignore
+      information: this.form.get('info').value
+    }
 
-    this.sessionApi.addSession({
-      ed: endsNewTmp,
-      idt: initialDateTmp,
-      linkTmp,
-      stateTmp,
-      topicTmp,
-      infoTmp
-    })
+    this.sessionApi.addSession(newSessionFormat)
       .then((response) => {
+        this.loading = false;
         console.log(response);
         this.router.navigate(['main']);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        this.loading = false;
+        console.log(e)
+      });
 
   }
 
@@ -116,7 +116,7 @@ export class CreateSessionComponent implements OnInit {
 
   createNewTopic(_name: string): void{
     const newTopicFormat = {name: _name}
-    this.loadingFunction();
+
     this.topicsApi.addSession(newTopicFormat).then(r => {
       console.log(r);
     })
@@ -124,12 +124,6 @@ export class CreateSessionComponent implements OnInit {
   }
 
 
-  loadingFunction(){
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-    }, 2000)
-  }
 
 
 
