@@ -26,12 +26,12 @@ export class TopicsApiService {
     return throwError('Something happened with request, please try again later.').toPromise();
   }
 
-  addSession(data: any): Promise<TopicsInput>{
+  addTopic(data: any): Promise<TopicsInput>{
     return this.http.post<TopicsInput>(this.basePath, JSON.stringify(data), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 
-  getAllSessions(): Promise<TopicsOutput>{
+  getAllTopics(): Promise<TopicsOutput>{
     return this.http.get<TopicsOutput>(this.basePath)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
