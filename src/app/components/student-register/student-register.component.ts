@@ -86,8 +86,10 @@ export class StudentRegisterComponent implements OnInit{
 
 
      this.newUser = {
+       profilePhoto: "dfdfdsfdfs",
+       lastname: "pepelucho",
       // @ts-ignore
-      username: this.form.get('username').value,
+      name: this.form.get('username').value,
       // @ts-ignore
       password: this.form.get('password').value,
       // @ts-ignore
