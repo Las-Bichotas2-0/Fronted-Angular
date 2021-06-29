@@ -15,7 +15,7 @@ export class StudentRegisterComponent implements OnInit{
   form: FormGroup;
   languages: any[] = [];
   topics: any[] = [];
-
+  newUser = {};
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -23,18 +23,20 @@ export class StudentRegisterComponent implements OnInit{
     this.languages = [];
     this.topics = [];
     this.form = this.fb.group({
-      topic: [[]],
+      topic: [{}],
       username:['', Validators.required],
       password: ['', Validators.required],
       email:['', Validators.required],
       language: [[], Validators.required],
+      description: ''
 
     })
   }
 
   ngOnInit(): void {
-
-    }
+    this.getAllLanguages();
+    this.getAllTopics();
+  }
 
 
   getErrorMessage() {
@@ -44,7 +46,6 @@ export class StudentRegisterComponent implements OnInit{
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-
 
 
   saveUserToAPI(data: any): void{
@@ -80,7 +81,25 @@ export class StudentRegisterComponent implements OnInit{
       })
       .catch((error)=>console.log(error))
   }
-}
 
+  register(): void{
+
+
+     this.newUser = {
+      // @ts-ignore
+      username: this.form.get('username').value,
+      // @ts-ignore
+      password: this.form.get('password').value,
+      // @ts-ignore
+      description: this.form.get('description').value,
+      // @ts-ignore
+      topic: this.form.get('topic').value,
+      // @ts-ignore
+      language: this.form.get('language').value
+      }
+
+      this.saveUserToAPI(this.newUser);
+  }
+}
 
 

@@ -19,7 +19,7 @@
       <mat-form-field appearance="fill" >
         <mat-label >Select Topic</mat-label>
         <mat-select  name="topic" formControlName="topic" [disabled]="createNewSesion==true">
-          <mat-option *ngFor="let topic of topics" [value]="topic.id" >
+          <mat-option *ngFor="let topic of topics" [value]="topic.name" >
             {{topic.name}}
           </mat-option>
         </mat-select>
@@ -50,7 +50,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Select Language</mat-label>
         <mat-select  name="language" formControlName="language">
-          <mat-option *ngFor="let language of languages" [value]="language.id" >
+          <mat-option *ngFor="let language of languages" [value]="language.name" >
             {{language.name}}
           </mat-option>
         </mat-select>
