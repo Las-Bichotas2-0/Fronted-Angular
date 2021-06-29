@@ -13,13 +13,14 @@ import {SessionInput} from "../../core/models/inputs/session-input";
 })
 export class CreateSessionComponent implements OnInit {
 
-
+  newSessionFormat: any;
+  topicCreatedSuccesfully: boolean = false;
   loading: boolean = false;
   form: FormGroup;
   createNewSesion: boolean = false;
   topics: any[] = [];
   languages: any[] = [];
-  newTopicNameValue: string | undefined;
+  newTopicNameValue: [] | undefined;
 
   constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService, private sessionApi: SessionApiService) {
     this.topics = [];
@@ -53,7 +54,7 @@ export class CreateSessionComponent implements OnInit {
 
 
   getAllTopics(): void{
-    this.topicsApi.getAllSessions()
+    this.topicsApi.getAllTopics()
       .then((response: any) =>{
         for(let i = 0; i < response.content.length; i++){
           this.topics.push(response.content[i]);
@@ -76,59 +77,91 @@ export class CreateSessionComponent implements OnInit {
 
 
   createSession(): void{
+    //this.loading = true;
     if(this.createNewSesion){
       // @ts-ignore
-      this.createNewTopic(this.form.get('newTopicName').value);
+      const newTopicFormat = {name: this.form.get('newTopicName').value}
+
+      this.topicsApi.addTopic(newTopicFormat).then(r => {
+
+        this.topicCreatedSuccesfully = true;
+        console.log(r);
+        // @ts-ignore
+        this.setSessionData(this.form.get('newTopicName').value);
+        this.saveSessionToAPI(this.newSessionFormat);
+
+      })
+        .catch((error)=> {
+          console.log(error);
+
+        });
       // @ts-ignore
-      this.newTopicNameValue = this.form.get('newTopicName').value;
+      //this.newTopicNameValue.push(this.form.get('newTopicName').value);
     }
-    // @ts-ignore
-    this.newTopicNameValue = this.form.get('topic').value;
 
 
     // @ts-ignore
-    const endsNewTmp = this.form.get('endDate').value;
-    // @ts-ignore
-    const initialDateTmp = this.form.get('initialDate').value;
-    const linkTmp = `www.zoom.com/${this.newTopicNameValue}`;
-    const stateTmp = "active";
-    const topicTmp = this.newTopicNameValue;
-    // @ts-ignore
-    const infoTmp = this.form.get('info').value;
+    //this.newTopicNameValue.push(this.form.get('topic').value);
 
-    this.sessionApi.addSession({
-      ed: endsNewTmp,
-      idt: initialDateTmp,
-      linkTmp,
-      stateTmp,
-      topicTmp,
-      infoTmp
-    })
+    // @ts-ignore
+    this.setSessionData(this.form.get('topic').value);
+    this.saveSessionToAPI(this.newSessionFormat);
+
+
+
+  }
+
+
+  saveSessionToAPI(newSessionFormat: any): void{
+    this.sessionApi.addSession(newSessionFormat)
       .then((response) => {
+        this.loading = false;
         console.log(response);
         this.router.navigate(['main']);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        this.loading = false;
+        console.log(e)
+      });
+  }
+
+
+
+
+  setSessionData(topicName: string): void{
+     this.newSessionFormat={
+      // @ts-ignore
+      endAt:this.form.get('endDate').value,
+      // @ts-ignore
+      startAt: this.form.get('initialDate').value,
+      link: `www.zoom.com/${this.newTopicNameValue}`,
+      state: 'active',
+      topic: topicName,
+      // @ts-ignore
+      information: this.form.get('info').value
+    }
 
   }
 
 
 
-  createNewTopic(name: string): void{
-    this.loadingFunction();
-    this.topicsApi.addSession(name).then(r => {
+
+  createNewTopic(_name: string): void{
+    const newTopicFormat = {name: _name}
+
+    this.topicsApi.addTopic(newTopicFormat).then(r => {
+      this.topicCreatedSuccesfully = true;
       console.log(r);
+
     })
-      .catch((error)=> console.log(error));
+      .catch((error)=> {
+        console.log(error);
+
+      });
+
   }
 
 
-  loadingFunction(){
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-    }, 2000)
-  }
 
 
 
