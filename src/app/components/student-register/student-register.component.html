@@ -1,4 +1,5 @@
 <div class="container">
+  <form [formGroup]="form" (ngSubmit)="register">
   <mat-card class="sign-up">
     <mat-card-title>Sign Up Now</mat-card-title>
     <mat-card-subtitle
@@ -75,11 +76,13 @@
       <button
         mat-raised-button
         color="primary"
+        type="submit"
         class="back-color-web"
-        routerLink="/register/subscription"
+        [disabled]="form.invalid"
       >
         SIGN UP
       </button>
     </mat-card-actions>
   </mat-card>
+  </form>
 </div>
