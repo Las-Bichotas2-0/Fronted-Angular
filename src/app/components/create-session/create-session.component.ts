@@ -114,9 +114,10 @@ export class CreateSessionComponent implements OnInit {
 
 
 
-  createNewTopic(name: string): void{
+  createNewTopic(_name: string): void{
+    const newTopicFormat = {name: _name}
     this.loadingFunction();
-    this.topicsApi.addSession(name).then(r => {
+    this.topicsApi.addSession(newTopicFormat).then(r => {
       console.log(r);
     })
       .catch((error)=> console.log(error));
