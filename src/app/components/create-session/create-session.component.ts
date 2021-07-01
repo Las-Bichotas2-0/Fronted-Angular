@@ -45,7 +45,7 @@ export class CreateSessionComponent implements OnInit {
 
     this.form.get('topic')?.valueChanges.subscribe(data =>  {
       console.log(data);
-      if(data == 0){
+      if(data == 'None'){
         this.createNewSesion = true;
       }
       console.log(this.createNewSesion);
