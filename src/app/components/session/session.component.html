@@ -1,5 +1,6 @@
 <div class="container">
-  <mat-card class="size" *ngFor="let sesion of sessions">
+  <mat-card class="size" *ngFor="let sesion of sessions" >
+    <div *ngIf="sesion.state=='active'">
     <mat-card-title>Session</mat-card-title>
     <mat-chip-list class="spacer">
       <mat-chip>{{sesion.startAt}}</mat-chip>
@@ -18,5 +19,6 @@
         ENTRY
       </button>
     </mat-card-actions>
+    </div>
   </mat-card>
 </div>

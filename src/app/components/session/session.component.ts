@@ -38,6 +38,13 @@ export class SessionComponent implements OnInit{
 
   reserve(id: any){
     console.log(id);
+    this.sessionApi.assingUserToSession(id,1)
+      .then((response)=>{
+        console.log(response);
+      })
+      .catch((e)=>{
+        console.log(e.value);
+      })
   }
 
 }

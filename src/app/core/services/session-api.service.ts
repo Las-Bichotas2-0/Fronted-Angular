@@ -38,8 +38,9 @@ export class SessionApiService {
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 
-  assingUserToSession(sessionId: number, userId: number): Promise<SessionOutput>{
-    return this.http.post<SessionOutput>(`${this.basePath}/${sessionId}/${userId}`, this.httpOptions)
+  assingUserToSession(sessionId: number, userId: number): Promise<any> {
+
+     return this.http.post<SessionOutput>(`${this.basePath}/${sessionId}/${userId}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
   }
 }
