@@ -40,5 +40,4 @@ export class SessionComponent implements OnInit{
     console.log(id);
   }
 
-
 }
