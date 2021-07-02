@@ -1,8 +1,8 @@
 <div class="container">
   <mat-spinner class="spinner" diameter="50" *ngIf="loading"></mat-spinner>
 
-  <form [formGroup]="form" (ngSubmit)="createSession()" >
-  <mat-card raisedElevation="16" class="z-depth" >
+  <form [formGroup]="form" (ngSubmit)="createSession()"  >
+  <mat-card raisedElevation="16" class="z-depth" *ngIf="!loading" >
     <mat-card-title>Create a new session</mat-card-title>
     <mat-card-subtitle
     >Give us some information about your new session</mat-card-subtitle
