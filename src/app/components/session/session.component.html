@@ -1,5 +1,6 @@
 <div class="container">
-  <mat-card class="size" *ngFor="let sesion of sessions">
+  <mat-card class="size" *ngFor="let sesion of sessions" >
+    <div *ngIf="sesion.state=='active'">
     <mat-card-title>Session</mat-card-title>
     <mat-chip-list class="spacer">
       <mat-chip>{{sesion.startAt}}</mat-chip>
@@ -14,9 +15,10 @@
     </mat-chip-list>
     <mat-card-actions>
       <button mat-raised-button>CANCEL</button>
-      <button (click)="openDialog()" mat-raised-button color="primary">
+      <button (click)="reserve(sesion.id)" mat-raised-button color="primary">
         ENTRY
       </button>
     </mat-card-actions>
+    </div>
   </mat-card>
 </div>
