@@ -12,7 +12,7 @@ import * as _ from 'lodash';
 export class TutorComponent implements OnInit {
   tutorId!: number;
   tutorData: User = {} as User;
-  defaultsTutor: User = { id: 0, name: '', topics: [], languages: []};
+  defaultsTutor: User = { name: '', topics: [], languages: []};
 
   constructor(private usersApi: UserApiService, private router: Router, private route: ActivatedRoute) { }
 

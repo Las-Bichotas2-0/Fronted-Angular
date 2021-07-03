@@ -55,6 +55,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
 import { TutorsComponent } from './components/tutors/tutors.component';
 import { TutorComponent } from './components/tutor/tutor.component';
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 
 
@@ -115,8 +116,8 @@ import { TutorComponent } from './components/tutor/tutor.component';
     NgPaymentCardModule,
     FormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
-
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
   providers: [MatDatepickerModule, MatNativeDateModule, UserApiService],
   bootstrap: [AppComponent],
