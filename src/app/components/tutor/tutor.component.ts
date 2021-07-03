@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { User } from  '../../core/models/user';
+import { UserOutput } from '../../core/models/outputs/userOutput';
 import { UserApiService } from "../../core/services/user-api.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
@@ -11,8 +11,8 @@ import * as _ from 'lodash';
 })
 export class TutorComponent implements OnInit {
   tutorId!: number;
-  tutorData: User = {} as User;
-  defaultsTutor: User = { name: '', topics: [], languages: []};
+  tutorData: UserOutput = {} as UserOutput;
+  defaultsTutor: UserOutput = { name: '', topics: [], languages: []};
 
   constructor(private usersApi: UserApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -40,8 +40,8 @@ export class TutorComponent implements OnInit {
 
   retrieveTutor(id: number): void {
     this.usersApi.getUserById(id)
-      .subscribe((response: User) => {
-        this.tutorData = {} as User;
+      .subscribe((response: UserOutput) => {
+        this.tutorData = {} as UserOutput;
         this.tutorData = _.cloneDeep(response);
         console.log(response);
         console.log(this.tutorData);

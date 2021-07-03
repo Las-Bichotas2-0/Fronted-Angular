@@ -1,4 +1,4 @@
-export interface User {
+export interface UserOutput {
   name: string;
   topics: [];
   languages: [];

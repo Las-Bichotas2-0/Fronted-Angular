@@ -4,7 +4,7 @@ import {Observable, throwError} from "rxjs";
 import {UserInput} from "../models/inputs/user-input";
 import {catchError, retry} from "rxjs/operators";
 import firebase from "firebase";
-import { User } from "../models/user";
+import { UserOutput } from "../models/outputs/userOutput";
 
 @Injectable({providedIn: 'root'})
 export class UserApiService {
@@ -30,14 +30,14 @@ export class UserApiService {
   }
 
   // Get User by Id
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.basePath}/${id}`, this.httpOptions )
+  getUserById(id: number): Observable<UserOutput> {
+    return this.http.get<UserOutput>(`${this.basePath}/${id}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
 
   // Get User Data
-  getAllUsers(): Observable<User>{
-    return this.http.get<User>(this.basePath)
+  getAllUsers(): Observable<UserOutput>{
+    return this.http.get<UserOutput>(this.basePath)
       .pipe(retry(2), catchError(this.handleError));
   }
 }

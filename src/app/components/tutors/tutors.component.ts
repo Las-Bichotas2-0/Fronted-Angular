@@ -5,7 +5,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { UserApiService } from "../../core/services/user-api.service";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { User } from "../../core/models/user";
+import { UserOutput } from "../../core/models/outputs/userOutput";
 
 @Component({
   selector: 'app-tutors',
@@ -14,7 +14,7 @@ import { User } from "../../core/models/user";
 })
 export class TutorsComponent implements OnInit, AfterViewInit {
   @ViewChild('tutorForm', { static: false }) tutorForm!: NgForm;
-  tutorData: User;
+  tutorData: UserOutput;
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['name', 'topics', 'languages', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,7 +23,7 @@ export class TutorsComponent implements OnInit, AfterViewInit {
   isFiltering = false;
 
   constructor(private userApi: UserApiService, private router: Router) {
-    this.tutorData = {} as User;
+    this.tutorData = {} as UserOutput;
   }
 
   ngOnInit(): void {
