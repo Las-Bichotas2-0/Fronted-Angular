@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {throwError} from "rxjs";
+import {Observable, throwError} from "rxjs";
 import {UserInput} from "../models/inputs/user-input";
 import {catchError, retry} from "rxjs/operators";
+import firebase from "firebase";
+import { UserOutput } from "../models/outputs/userOutput";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class UserApiService {
-
-
   basePath='https://ilanguage-318118.rj.r.appspot.com/api/user';
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
   constructor(private http: HttpClient) { }
-
-  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
   handleError(error: HttpErrorResponse): Promise<never> {
     if (error.error instanceof ErrorEvent) {
@@ -32,4 +29,15 @@ export class UserApiService {
 
   }
 
+  // Get User by Id
+  getUserById(id: number): Observable<UserOutput> {
+    return this.http.get<UserOutput>(`${this.basePath}/${id}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  // Get User Data
+  getAllUsers(): Observable<UserOutput>{
+    return this.http.get<UserOutput>(this.basePath)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

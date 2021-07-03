@@ -5,6 +5,7 @@ import {LanguagesApiService} from "../../core/services/languages-api.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SessionApiService} from "../../core/services/session-api.service";
 import {SessionInput} from "../../core/models/inputs/session-input";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-create-session',
@@ -22,7 +23,7 @@ export class CreateSessionComponent implements OnInit {
   languages: any[] = [];
   newTopicNameValue: [] | undefined;
 
-  constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService, private sessionApi: SessionApiService) {
+  constructor(private fb: FormBuilder,private router: Router, private topicsApi: TopicsApiService, private languageApi: LanguagesApiService, private sessionApi: SessionApiService, private _snackBar: MatSnackBar) {
     this.topics = [];
     this.languages = [];
     this.form = this.fb.group({
@@ -38,14 +39,14 @@ export class CreateSessionComponent implements OnInit {
   ngOnInit(): void {
     this.topics.push({
       id: 0,
-      name: 'None'
+      name: 'Other'
     })
     this.getAllTopics();
     this.getAllLanguages();
 
     this.form.get('topic')?.valueChanges.subscribe(data =>  {
       console.log(data);
-      if(data == 'None'){
+      if(data == 'Other'){
         this.createNewSesion = true;
       }
       console.log(this.createNewSesion);
@@ -77,7 +78,7 @@ export class CreateSessionComponent implements OnInit {
 
 
   createSession(): void{
-    //this.loading = true;
+    this.loading = true;
     if(this.createNewSesion){
       // @ts-ignore
       const newTopicFormat = {name: this.form.get('newTopicName').value}
@@ -98,16 +99,12 @@ export class CreateSessionComponent implements OnInit {
       // @ts-ignore
       //this.newTopicNameValue.push(this.form.get('newTopicName').value);
     }
-
-
     // @ts-ignore
     //this.newTopicNameValue.push(this.form.get('topic').value);
 
     // @ts-ignore
     this.setSessionData(this.form.get('topic').value);
     this.saveSessionToAPI(this.newSessionFormat);
-
-
 
   }
 
@@ -116,10 +113,12 @@ export class CreateSessionComponent implements OnInit {
     this.sessionApi.addSession(newSessionFormat)
       .then((response) => {
         this.loading = false;
+        this.createdSuccesfylly();
         console.log(response);
         this.router.navigate(['main']);
       })
       .catch((e) => {
+        this.error();
         this.loading = false;
         console.log(e)
       });
@@ -145,7 +144,6 @@ export class CreateSessionComponent implements OnInit {
 
 
 
-
   createNewTopic(_name: string): void{
     const newTopicFormat = {name: _name}
 
@@ -161,7 +159,13 @@ export class CreateSessionComponent implements OnInit {
 
   }
 
+  createdSuccesfylly(){
+    this._snackBar.open('Session registrated correctly','',{duration:3000,horizontalPosition : 'center', verticalPosition:'bottom'})
+  }
 
+  error(){
+    this._snackBar.open('An error ocurred while registrating the session. Please try again.','',{duration:3000,horizontalPosition : 'center', verticalPosition:'bottom'})
+  }
 
 
 

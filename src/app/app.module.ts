@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './components/banner/banner.component';
 import { MoreSpokenComponent } from './components/more-spoken/more-spoken.component';
 import { RankingStudentComponent } from './components/ranking-student/ranking-student.component';
+import { UserApiService } from "./core/services/user-api.service";
 
 //Material
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -52,6 +53,9 @@ import { PaymentsComponent } from './pages/payments/payments.component';
 import { CreateSessionComponent } from './components/create-session/create-session.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
+import { TutorsComponent } from './components/tutors/tutors.component';
+import { TutorComponent } from './components/tutor/tutor.component';
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 
 
@@ -83,6 +87,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     DialogTermComponent,
     PaymentsComponent,
     CreateSessionComponent,
+    TutorsComponent,
+    TutorComponent,
 
   ],
   imports: [
@@ -112,10 +118,10 @@ import {MatNativeDateModule} from "@angular/material/core";
     NgPaymentCardModule,
     FormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
-
+    MatNativeDateModule,
+    MatPaginatorModule
   ],
-  providers: [MatDatepickerModule, MatNativeDateModule],
+  providers: [MatDatepickerModule, MatNativeDateModule, UserApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
