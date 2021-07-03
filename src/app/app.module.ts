@@ -52,6 +52,7 @@ import { PaymentsComponent } from './pages/payments/payments.component';
 import { CreateSessionComponent } from './components/create-session/create-session.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
+import { TutorsComponent } from './components/tutors/tutors.component';
 
 
 
@@ -82,6 +83,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     DialogTermComponent,
     PaymentsComponent,
     CreateSessionComponent,
+    TutorsComponent,
   ],
   imports: [
     BrowserModule,
