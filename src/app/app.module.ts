@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BannerComponent } from './components/banner/banner.component';
 import { MoreSpokenComponent } from './components/more-spoken/more-spoken.component';
 import { RankingStudentComponent } from './components/ranking-student/ranking-student.component';
+import { UserApiService } from "./core/services/user-api.service";
 
 //Material
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -117,7 +118,7 @@ import { TutorComponent } from './components/tutor/tutor.component';
     MatNativeDateModule
 
   ],
-  providers: [MatDatepickerModule, MatNativeDateModule],
+  providers: [MatDatepickerModule, MatNativeDateModule, UserApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
