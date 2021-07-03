@@ -5,19 +5,20 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import {RegisterRoleComponent} from './pages/register-role/register-role.component';
-import {StudentRegisterComponent} from './components/student-register/student-register.component';
-import {TuthorRegisterComponent} from './components/tuthor-register/tuthor-register.component';
-import {SubscriptionsComponent} from './pages/subscriptions/subscriptions.component';
-import {SessionComponent} from './components/session/session.component';
-import {PaymentsComponent} from './pages/payments/payments.component';
-import {CreateSessionComponent} from "./components/create-session/create-session.component";
-
+import { RegisterRoleComponent } from './pages/register-role/register-role.component';
+import { StudentRegisterComponent } from './components/student-register/student-register.component';
+import { TuthorRegisterComponent } from './components/tuthor-register/tuthor-register.component';
+import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.component';
+import { SessionComponent } from './components/session/session.component';
+import { PaymentsComponent } from './pages/payments/payments.component';
+import { CreateSessionComponent } from "./components/create-session/create-session.component";
+//import { TutorsComponent } from "./components/tutors/tutors.component";
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  //{ path: 'tutors', component: TutorsComponent },
   {
     path: 'register',
     component: RegisterComponent,

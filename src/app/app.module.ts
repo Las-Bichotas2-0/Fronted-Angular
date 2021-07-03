@@ -53,6 +53,7 @@ import { CreateSessionComponent } from './components/create-session/create-sessi
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material/core";
 import { TutorsComponent } from './components/tutors/tutors.component';
+import { TutorComponent } from './components/tutor/tutor.component';
 
 
 
@@ -84,6 +85,7 @@ import { TutorsComponent } from './components/tutors/tutors.component';
     PaymentsComponent,
     CreateSessionComponent,
     TutorsComponent,
+    TutorComponent,
   ],
   imports: [
     BrowserModule,
