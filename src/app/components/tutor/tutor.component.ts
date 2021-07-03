@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from  '../../core/models/user';
 import { UserApiService } from "../../core/services/user-api.service";
 import { Router, ActivatedRoute } from '@angular/router';
-//import * as _ from 'lodash';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-tutor',
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class TutorComponent implements OnInit {
   tutorId!: number;
   tutorData: User = {} as User;
-  defaultTutor: User = { id: 0, name: '', topics: [], languages: []};
+  defaultsTutor: User = { name: '', topics: [], languages: []};
 
   constructor(private usersApi: UserApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -21,12 +21,10 @@ export class TutorComponent implements OnInit {
       if (params.id) {
         const id = params.id;
         console.log(id);
-        //this.retrieveTutor(id);
-        //this.isEditMode = true;
+        this.retrieveTutor(id);
         return id;
       } else {
-        //this.resetStudent();
-        //this.isEditMode = false;
+        this.resetTutor();
         return 0;
       }
     }));
@@ -37,9 +35,9 @@ export class TutorComponent implements OnInit {
   }
 
   resetTutor(): void {
-    this.tutorData = this.defaultTutor;
+    this.tutorData = this.defaultsTutor;
   }
-/*
+
   retrieveTutor(id: number): void {
     this.usersApi.getUserById(id)
       .subscribe((response: User) => {
@@ -49,5 +47,5 @@ export class TutorComponent implements OnInit {
         console.log(this.tutorData);
       });
   }
-*/
+
 }

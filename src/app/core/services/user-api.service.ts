@@ -4,19 +4,14 @@ import {Observable, throwError} from "rxjs";
 import {UserInput} from "../models/inputs/user-input";
 import {catchError, retry} from "rxjs/operators";
 import firebase from "firebase";
-import User = firebase.User;
+import { User } from "../models/user";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class UserApiService {
-
-
   basePath='https://ilanguage-318118.rj.r.appspot.com/api/user';
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
   constructor(private http: HttpClient) { }
-
-  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'})};
 
   handleError(error: HttpErrorResponse): Promise<never> {
     if (error.error instanceof ErrorEvent) {
@@ -40,4 +35,9 @@ export class UserApiService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  // Get User Data
+  getAllUsers(): Observable<User>{
+    return this.http.get<User>(this.basePath)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

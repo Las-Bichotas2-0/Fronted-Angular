@@ -12,13 +12,13 @@ import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.comp
 import { SessionComponent } from './components/session/session.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { CreateSessionComponent } from "./components/create-session/create-session.component";
-//import { TutorsComponent } from "./components/tutors/tutors.component";
+import { TutorsComponent } from "./components/tutors/tutors.component";
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  //{ path: 'tutors', component: TutorsComponent },
+  { path: 'tutors', component: TutorsComponent },
   {
     path: 'register',
     component: RegisterComponent,
