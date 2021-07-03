@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {throwError} from "rxjs";
+import {Observable, throwError} from "rxjs";
 import {UserInput} from "../models/inputs/user-input";
 import {catchError, retry} from "rxjs/operators";
+import firebase from "firebase";
+import User = firebase.User;
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,12 @@ export class UserApiService {
     return this.http.post<UserInput>(this.basePath, JSON.stringify(data), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError)).toPromise();
 
+  }
+
+  // Get User by Id
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.basePath}/${id}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError));
   }
 
 }

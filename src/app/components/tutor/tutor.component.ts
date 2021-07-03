@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Tutor } from  '../../core/models/tutor';
+import { User } from  '../../core/models/user';
 import { UserApiService } from "../../core/services/user-api.service";
 import { Router, ActivatedRoute } from '@angular/router';
 //import * as _ from 'lodash';
@@ -11,8 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class TutorComponent implements OnInit {
   tutorId!: number;
-  tutorData: Tutor = {} as Tutor;
-  defaultTutor: Tutor = { id: 0, name: '', topics: [], languages: []};
+  tutorData: User = {} as User;
+  defaultTutor: User = { id: 0, name: '', topics: [], languages: []};
 
   constructor(private usersApi: UserApiService, private router: Router, private route: ActivatedRoute) { }
 
@@ -21,12 +21,12 @@ export class TutorComponent implements OnInit {
       if (params.id) {
         const id = params.id;
         console.log(id);
-        this.retrieveStudent(id);
-        this.isEditMode = true;
+        //this.retrieveTutor(id);
+        //this.isEditMode = true;
         return id;
       } else {
-        this.resetStudent();
-        this.isEditMode = false;
+        //this.resetStudent();
+        //this.isEditMode = false;
         return 0;
       }
     }));
@@ -39,15 +39,15 @@ export class TutorComponent implements OnInit {
   resetTutor(): void {
     this.tutorData = this.defaultTutor;
   }
-  
-  retrieveStudent(id: number): void {
-    this.studentsApi.getStudentById(id)
-      .subscribe((response: Student) => {
-        this.studentData = {} as Student;
-        this.studentData = _.cloneDeep(response);
+/*
+  retrieveTutor(id: number): void {
+    this.usersApi.getUserById(id)
+      .subscribe((response: User) => {
+        this.tutorData = {} as User;
+        this.tutorData = _.cloneDeep(response);
         console.log(response);
-        console.log(this.studentData);
+        console.log(this.tutorData);
       });
   }
-
+*/
 }

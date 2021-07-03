@@ -1,4 +1,4 @@
-export interface Tutor {
+export interface User {
   id: number;
   name: string;
   topics: [];
